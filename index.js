@@ -1,17 +1,12 @@
 
-//loop
+const VALID_PASSWORD = 'qwerty'
 
-// let count = 0;
-// while (count<3) {
-//     count++;
-//     console.log(count);
-// }
-
-
-
-count = 10;
 while (true) {
-    count++;
-    console.log(count);
-    if(count >= MAX_VALUE) break;
+  const userInputPassword = promt('Enter password');
+  if(userInputPassword === VALID_PASSWORD) {
+    console.log('welcome');
+    break;
+  }
 }
+
+console.log(userInputPassword);
