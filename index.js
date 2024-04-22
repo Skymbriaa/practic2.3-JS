@@ -1,18 +1,11 @@
 
+let user = {
+  fname: 'Brad',
+  sname: 'Pitt'
+}
 
-const object1 = new Oblect();
-object1.prop1 = 'prop1'
-const object2 = bjetct();
+const activeuser = user;
+activeuser.age = 60;
 
-//
-const object = {};
-
-const button = {
-  //properties
-  bgcolor: 'red'
-};
-
-button.width = 50;
-
-
-console.log(button);
+const userClient = activeUser;
+userClient.order = '123';
