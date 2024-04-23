@@ -1,52 +1,28 @@
 
-// const user = {
-//   fname: 'Brad',
-//   sname: 'Pitt'
 
-// }
-
-// console.log(user);
-
-// user.age = 60;
-// user.isAdult = true;
-
-// console.log(user.age);
-
-
-// const user2 = {
-//   fname: 'Tom',
-//   sname: 'Rot',
-//   password: 'qwerty',
-//   age: 59,
-//   isAdult: true,
-//   sayFirstName: function(){
-//     return 'Hi, i\'m ' + user.fname;
-//   },
-//   saySecondName: function(){
-//     return `Hi, i\'m  + ${user.sname}`;
-//   }
-// };
-// console.log(user);
-
-//
-function User(fnameValue, sname, password, age, isAdult){
-  this.fname = fnameValue;
-  this.sname = sname;
-  this.password = password;
-  this.age = age;
-  this.isAdult = isAdult;
-  this.sayFullName = function () {
-    return `${this.fname} ${this.ansme}`;
-  };
-  this.getBdYear = function () {
-    //body function
-    return 1963;
-  };
-  this.showSubscribe = function () {
-    return 'you';
-  }
-
+function getRandomInclusive(min = 0, max = 10) {
+  return Math.floor(Math.random() * (max + 1 - min) + min); 
 }
 
-const user2 = new User('Brad','Pitt','qwerty',60,true);
-console.log(user2);
+function catchErrorUserInputNumber(value) {
+  return value==='' || value===null || number.isNaN(Number(value));
+}
+
+const randomNumber1 = getRandomInclusive();
+const randomNumber2 = getRandomInclusive();
+const rightResult = randomNumber1 * randomNumber2;
+const strTask = 'calculate\n ${randomNumber1} * ${randomNumber2} =';
+
+while(true){
+  const userResult = prompt(strTask);
+  if(isErrorUserInputNumber(userResult)){
+    continue;
+  }
+  if(rightResult === Number(userResult)) {
+    alert('win');
+    break;
+  }
+}
+
+
+
