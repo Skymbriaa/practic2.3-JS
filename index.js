@@ -1,28 +1,31 @@
 
 
-function getRandomInclusive(min = 0, max = 10) {
-  return Math.floor(Math.random() * (max + 1 - min) + min); 
-}
-
-function catchErrorUserInputNumber(value) {
-  return value==='' || value===null || number.isNaN(Number(value));
-}
-
-const randomNumber1 = getRandomInclusive();
-const randomNumber2 = getRandomInclusive();
-const rightResult = randomNumber1 * randomNumber2;
-const strTask = 'calculate\n ${randomNumber1} * ${randomNumber2} =';
-
-while(true){
-  const userResult = prompt(strTask);
-  if(isErrorUserInputNumber(userResult)){
-    continue;
+const user = {
+  fname: 'Brad',
+  sname: 'Pitt',
+  age: 60,
+  'two word': 'qwerty asdfgh',
+  45: 333,
+  key: undefined,
+  show: function () {
+    alert('show')
   }
-  if(rightResult === Number(userResult)) {
-    alert('win');
-    break;
-  }
+};
+
+for (const key in user) {
+  console.log(key, ':', user[key]);
 }
 
 
+console.log('fname' in user);
+console.log('fullname' in user);
+console.log('key' in user);
+console.log(45 in user);
+cojsole.log('45' in user);
+console.log('show' in user);
+
+const prop = 'show';
+if(prop in user) {
+  console.log(typeof user[prop] === 'function' ? user[prop]() : user[prop]);
+}
 
