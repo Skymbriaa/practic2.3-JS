@@ -15,19 +15,20 @@ const user1 = {
   age: 56,
   
 };
-user1.__proto__ = userFunk;
+// user1.__proto__ = userFunk;
 
-const user2 = {
-  fname: "Tom",
-  sname: "Rot",
-  age: 55,
-  ___proto___: userFunk,
-};
+function User(fname, sname, age){
+  this.fname = fname;
+  this.sname = sname;
+  this.age = age;
+}
 
+function UserPrototype() {
+  this.getFullName = function () {
+    return `${this.fname} ${this.sname}`;
+  };
+  this.getInfo = function () {
+    return `${this.sname}, years old ${this.age}`;
+  };
+}
 
-const user3 = {
-  fname: "Anna",
-  sname: "Qwerty",
-  age: 54,
-  
-};
