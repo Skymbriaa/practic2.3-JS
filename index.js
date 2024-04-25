@@ -1,31 +1,31 @@
 
+const arrNums = [];
+arrNums.push(7);
+arrNums.push(77);
+arrNums.push(777);
+console.log(arrNums);
+const arrNums2 = [];
+console.log(arrNums.push === arrNums2.push);
 
-const user = {
-  fname: 'Brad',
-  sname: 'Pitt',
-  age: 60,
-  'two word': 'qwerty asdfgh',
-  45: 333,
-  key: undefined,
-  show: function () {
-    alert('show')
+console.log(arrNums);
+
+
+
+
+function MyArray() {
+  this.length = 0;
+
+  this.push = function (value) {
+    this[this.length] = value;
+    this.length++;
   }
-};
-
-for (const key in user) {
-  console.log(key, ':', user[key]);
 }
 
+const myArrNums = new MyArray();
 
-console.log('fname' in user);
-console.log('fullname' in user);
-console.log('key' in user);
-console.log(45 in user);
-cojsole.log('45' in user);
-console.log('show' in user);
+myArrNums.push(2);
+myArrNums.push(3);
+myArrNums.push(4);
 
-const prop = 'show';
-if(prop in user) {
-  console.log(typeof user[prop] === 'function' ? user[prop]() : user[prop]);
-}
+console.log(myArrNums);
 
